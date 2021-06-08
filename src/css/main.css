@@ -482,7 +482,6 @@ h3.big-heading {
 }
 
 #board {
-    height: 90%;
     display: grid;
     justify-content: center;
     align-content: center;
