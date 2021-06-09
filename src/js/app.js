@@ -1,4 +1,4 @@
-(function () {
+const manageNavHiding = () => {
     let doc = document.documentElement;
     let w = window;
 
@@ -6,7 +6,6 @@
         curScroll, direction = 0, prevDirection = 0;
 
     let header = document.getElementById('nav');
-    console.log(header);
 
     let checkScroll = function () {
         curScroll = w.scrollY || doc.scrollTop;
@@ -28,7 +27,7 @@
         if (direction === 2 && curScroll > 50) {
             header.classList.add('hide');
             prevDirection = direction;
-        } else if (direction === 1 && curScroll<50) {
+        } else if (direction === 1) { //        } else if (direction === 1) {
             header.classList.remove('hide');
             prevDirection = direction;
         }
@@ -37,5 +36,54 @@
     window.addEventListener('scroll', checkScroll);
 
 }
-)
-();
+
+manageNavHiding();
+
+
+const removeBlur = () => {
+    const content = document.getElementById("content")
+    content.className = "content";
+}
+
+const manageNav = () => {
+    removeBlur();
+
+    const navLinksContainer = document.getElementById("nav-links-container");
+    navLinksContainer.className = "nav-links-container"
+}
+
+
+const setResponsiveNav = () => {
+    const navLinksContainer = document.getElementById("nav-links-container");
+    const nav = document.getElementById("nav");
+    const content = document.getElementById("content")
+
+    if (navLinksContainer.className === "nav-links-container") {
+        navLinksContainer.className += " responsive";
+    } else {
+        navLinksContainer.className = "nav-links-container";
+    }
+
+    if (nav.className === "nav") {
+        nav.className += " responsive";
+    } else {
+        nav.className = "nav"
+    }
+
+    if (content.className === "content") {
+        content.className += " responsive";
+    } else {
+        content.className = "content"
+    }
+
+}
+
+const removeResponsiveNav = () => {
+    const navLinksContainer = document.getElementById("nav-links-container");
+    navLinksContainer.className = "nav-links-container";
+
+    const content = document.getElementById("content")
+
+
+    removeBlur();
+}

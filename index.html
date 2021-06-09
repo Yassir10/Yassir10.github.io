@@ -15,18 +15,21 @@
 
 <div class="global-container">
   <header>
-    <nav id="nav">
+    <nav id="nav" class="nav">
       <div class="logo">
         <a href="#">
           <img src="src/images/logo.png"/>
         </a>
+        <a href="javascript:void(0);" class="menu-icon" onclick="setResponsiveNav()">
+          <i class="fa fa-bars"></i>
+        </a>
       </div>
-      <div class="nav-links-container">
+      <div id="nav-links-container" class="nav-links-container">
         <ol>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about" onclick="manageNav()">About</a></li>
+          <li><a href="#experience" onclick="manageNav()">Experience</a></li>
+          <li><a href="#projects" onclick="manageNav()">Projects</a></li>
+          <li><a href="#contact" onclick="manageNav()">Contact</a></li>
         </ol>
         <div class="resume-button-container">
           <a class="resume-button" href="src/docs/Lebenslauf_Yassir_Sellal.pdf" target="_blank">
@@ -37,9 +40,9 @@
     </nav>
   </header>
 
-  <div id="content">
+  <div id="content" class="content" onclick="removeResponsiveNav()">
     <main>
-      <section class="section1">
+      <section class="intro">
         <div style="transition-delay: 100ms;" class="fadeup-enter-done">
           <h1>Hi, my name is</h1>
         </div>
@@ -64,7 +67,7 @@
         </div>
       </section>
 
-      <section id="about" class="section2" data-sr-id="0">
+      <section id="about" class="about" data-sr-id="0">
         <h2 class="numbered-heading">About Me</h2>
         <div class="inner">
           <div class="about__StyledText-sc-1ownso9-1 kNIdQM">
@@ -105,6 +108,53 @@
         </div>
       </section>
 
+      <section id="projects" class="projects">
+        <h2>Checkout My Projects</h2>
+        <div class="project">
+          <h3>The Blind Jumper</h3>
+          <div class="project-image">
+            <a href="https://sim4edu.com/sims/28/" target="_blank">
+              <img src="./src/images/projects/blind-jumper.jpg" alt="The Blind Jumper Project"/>
+            </a>
+          </div>
+          <div class="project-description">
+            <p>In this scenario, there is an agent (the "jumper") that is not able to see the size of the barrier over
+              which he has to jump, and there is another agent (the "speaker") that is able to see the size of the
+              barrier and tries to communicate the right jump length to the jumper. However, the jumper and the speaker
+              do not speak the same language, so both agents first have to learn which signal communicates which jump
+              length. Both agents can perceive the success or failure of a jump (a jump fails if it is too short or too
+              long), and then update their signalling, resp. signal interpretation, function, accordingly.</p>
+            <div class="github-link">
+              <a href="https://github.com/Yassir10/blind-jumper" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <h3>GET MOVIE</h3>
+          <div class="project-image">
+            <a href="https://github.com/Yassir10/gtmv" target="_blank">
+              <img src="./src/images/projects/gtmv.jpg" alt="The Blind Jumper Project"/>
+            </a>
+          </div>
+          <div class="project-description">
+            <p>This website displays the most popular latest movies. Each movies contains a corresponding image,
+              overview, rating and release date. The movies' data is fetched from the Movie Database (TMDB) API (v3).
+              TMDb is a community built movie and TV database. Every piece of data has been added by its amazing
+              community dating back to 2008.</p>
+            <div class="github-link">
+              <a href="https://github.com/Yassir10/gtmv" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <section class="tic-tac-toe">
         <h1>TAKE A BREAK</h1>
@@ -138,6 +188,31 @@
         </div>
       </section>
 
+      <section class="project">
+        <h3>TODO LIST</h3>
+        <div class="project-image">
+          <a href="https://github.com/Yassir10/tdmngr" target="_blank">
+            <img src="./src/images/projects/todo.jpg" alt="TO DO UI"/>
+          </a>
+        </div>
+        <div class="project-description">
+          <p>
+            It's true that there are a lot of todo list web and mobile apps and one does not need to reinvent
+            the wheel by making another todo list app. The goal of developing this app was at the beginning
+            to learn React and simply have fun. However, I started to use it everyday to manage my todo list and
+            it turned out that it was very helpful in my everyday life. Using this app I can add a new task,
+            check the completed task and delete the not anymore relevant apps. Furthermore, I can also select
+            the completed, the uncompleted, or simply all the tasks. The tasks are stored in local storage in
+            the browser.
+          </p>
+          <div class="github-link">
+            <a href="https://github.com/Yassir10/tdmngr" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
 
       <section id="contact">
 
@@ -145,12 +220,22 @@
         <h2 class="title">Get In Touch</h2>
 
         <p>
-          I'm currently looking for a new job. Whether you have a job offer or just want to say hi,
-          I'll try my best to get back to you!
+          I currently just got my Master's degree in computer science and looking for a new job in the web
+          development industry. Whether you have a job offer or just want to say hi, I'll be happy to get
+          back to you!
         </p>
 
         <a class="email-link" href="mailto:sellal.yassir@gmail.com"
-           rel="noopener noreferrer" target="_blank">Contact me</a>
+           rel="noopener noreferrer" target="_blank">Contact me
+        </a>
+        <div class="social-media">
+          <a href="https://www.linkedin.com/in/yassir-sellal-a98aba187/" target="blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/yassir10" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </section>
 
     </main>

@@ -143,8 +143,13 @@ header {
     z-index: 11;
     height: 100px;
     width: 100%;
-    padding: 0 50px;
+    padding: 20px 50px;
+    box-shadow: 0 10px 30px -10px #3C2A7A;
+    /*backdrop-filter: blur(3px);*/
+    background-color: rgba(60, 42, 122, .9);
+
 }
+
 
 /*********** Nav ***********/
 
@@ -158,14 +163,10 @@ header {
     font-family: var(--font-mono);
     z-index: 12;
     counter-reset: nav;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     /*position: sticky;*/
 }
 
-#nav .logo {
-    height: 70px;
-    width: 70px;
-}
 
 #nav .logo a {
     padding: 0;
@@ -200,6 +201,7 @@ header {
     display: inline-block;
     padding-left: 0;
     margin-right: 2vw;
+    font-weight: bold;
 }
 
 .nav-links-container a {
@@ -234,7 +236,8 @@ header {
     content: "0" counter(nav) ".";
     margin-right: 5px;
     color: var(--blue);
-    font-size: var(--fz-xxs);
+    font-size: var(--fz-sm);
+    font-weight: bold;
     text-align: right;
 }
 
@@ -257,7 +260,7 @@ section {
 
 /*Section 1*/
 
-.section1 {
+.intro {
     display: flex;
     flex-direction: column;
     /*justify-content: center;*/
@@ -269,7 +272,7 @@ section {
     min-height: 100vh;
 }
 
-.section1 h1 {
+.intro h1 {
     color: var(--blue);
     margin: 0 0 30px 4px;
     font-family: var(--font-mono);
@@ -288,7 +291,7 @@ h3.big-heading {
     font-size: clamp(40px, 8vw, 80px)
 }
 
-.section1 p {
+.intro p {
     color: var(--white);
     font-family: var(--font-sans);
     font-size: 20px;
@@ -312,7 +315,7 @@ h3.big-heading {
     transition: var(--transition);
 }
 
-.section1 .divButton {
+.intro .divButton {
     margin: 30px auto;
 }
 
@@ -358,7 +361,7 @@ h3.big-heading {
     opacity: 0.15;
 }
 
-.section2 .inner {
+.about .inner {
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 50px;
@@ -372,7 +375,7 @@ h3.big-heading {
     font-size: var(--fz-xxl);
 }
 
-.section2 ul.skills-list {
+.about ul.skills-list {
     padding: 0;
     margin: 0 0 0 30px;
     overflow: hidden;
@@ -381,7 +384,7 @@ h3.big-heading {
     font-weight: bolder;
 }
 
-.section2 ul.skills-list li::before {
+.about ul.skills-list li::before {
     content: "▹";
     position: absolute;
     left: 0;
@@ -391,7 +394,7 @@ h3.big-heading {
     padding-top: 5px;
 }
 
-.section2 ul.skills-list li {
+.about ul.skills-list li {
     position: relative;
     margin-bottom: 10px;
     padding-left: 20px;
@@ -471,7 +474,6 @@ h3.big-heading {
 /*Tic Tac Toe*/
 
 .tic-tac-toe {
-    height: 70vh !important;
     justify-content: center;
     align-content: center;
     justify-items: center;
@@ -642,6 +644,207 @@ h3.big-heading {
     opacity: 0;
     transition: 1s;
 }
+
+
+/*Projects*/
+
+.projects {
+    /*border: 1px solid white;*/
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /*border: 1px solid white;*/
+    padding: 50px;
+}
+
+.project .project-image {
+    width: 100%;
+}
+
+.project .project-image a {
+    width: 100%;
+}
+
+.project .project-image img {
+    width: 100%;
+    /*height: 50vh;*/
+    /*border: 1px solid white;*/
+    opacity: 0.9;
+    border-radius: 10px;
+
+}
+
+.project .project-image img:hover {
+    opacity: 1;
+}
+
+.project .project-description {
+    /*border: 1px solid white;*/
+    padding: 20px;
+}
+
+.github-link a {
+    margin: 0 auto;
+}
+
+.github-link {
+    display: flex;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.project p {
+    font-size: var(--fz-md);
+}
+
+a.menu-icon {
+    display: none;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    padding: 20px;
+}
+
+.social-media:first-child {
+    margin-right: 10px;
+}
+
+/* Resposive */
+
+@media only screen and (max-width: 1000px) {
+
+    main {
+        padding: 0 50px 0 90px;
+
+    }
+
+
+    #nav .logo img {
+        height: 60px;
+        width: 60px;
+    }
+
+    header{
+        padding: 20px 20px;
+        box-shadow: 0 10px 30px -10px #3C2A7A;;
+    }
+
+
+
+    #nav {
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .hide {
+        opacity: 1;
+    }
+
+    .project {
+        padding: 50px 0;
+    }
+
+    .about .inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about .inner .image-container{
+        margin: 0;
+    }
+
+
+    #contact p {
+        width: 100%;
+    }
+
+    .content.responsive {
+        /*opacity: 0.4;*/
+        filter: blur(5px);
+        cursor: pointer;
+    }
+
+    .nav-links-container div, .nav-links-container ol {
+        display: none;
+    }
+
+    .nav-links-container.responsive {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #3C2A7A;
+        position: relative;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--blue);
+        border-radius: 5px;
+    }
+
+    .nav-links-container.responsive ol {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links-container.responsive div {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .nav-links-container.responsive ol li {
+        width: 100%;
+        padding: 10px;
+
+    }
+
+    .nav-links-container.responsive ol li a {
+        width: 100%;
+    }
+
+    .nav-links-container.responsive ol li:hover {
+        background-color: var(--blue);
+        font-weight: bold;
+        cursor: pointer;
+        color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+    #nav a:hover {
+        border: none;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo .menu-icon {
+        display: block;
+    }
+
+
+    #nav.responsive {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 
 /*Root*/
 
