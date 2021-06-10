@@ -184,6 +184,11 @@ header {
     transition: 500ms;
 }
 
+
+.nav-links-container ol li a {
+    padding: 10px;
+}
+
 .nav-links-container ol li a::before {
     counter-increment: nav;
     content: "0" counter(nav) ".";
@@ -194,6 +199,15 @@ header {
     text-align: right;
 }
 
+.content {
+    padding-top: 180px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
 
 /* Main */
 
@@ -211,8 +225,31 @@ section {
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    min-height: 100vh;
+    min-height: 80vh;
     max-width: 1000px;
+}
+
+.intro p {
+    width: 90%;
+    max-width: 90% !important;
+}
+.about .left-side p{
+    margin-bottom: 20px;
+}
+.about .left-side {
+    width: 90% !important;
+}
+
+.project {
+    padding: 5% !important;
+}
+
+#contact p {
+    width: 100% !important;
+}
+
+#nav:hover {
+    opacity: 1;
 }
 
 /* Intro */
@@ -339,6 +376,7 @@ section {
 .image-container {
     height: 333px;
     width: 250px;
+    opacity: 0.7;
 }
 
 .image {
@@ -359,8 +397,8 @@ section {
 }
 
 .image-container:hover {
-    opacity: 0.7;
-    transition: 1s;
+    /*opacity: 0.7;*/
+    /*transition: 1s;*/
 }
 
 .image-container:hover .overlay {
@@ -583,8 +621,15 @@ section {
     padding: 20px 50px;
 }
 
+.project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .project .project-image {
-    width: 100%;
+    width: 70%;
 }
 
 .project .project-image a {
@@ -603,7 +648,8 @@ section {
 }
 
 .project .project-description {
-    padding: 20px;
+    padding: 30px 0;
+    width: 80%;
 }
 
 .github-link a {
@@ -633,7 +679,7 @@ a.menu-icon {
 @media only screen and (max-width: 1000px) {
 
     main {
-        padding: 0 50px 0 90px;
+        padding: 0 5% 0 5%;
     }
 
     #nav .logo img {
@@ -657,7 +703,7 @@ a.menu-icon {
     }
 
     .project {
-        padding: 50px 0;
+        padding: 50px 50px;
     }
 
     .about .inner {
