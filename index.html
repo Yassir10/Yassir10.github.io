@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>MY PORTFOLIO</title>
+  <title>Yassir Sellal</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
   <link rel="stylesheet" href="src/css/main.css"/>
@@ -43,26 +43,26 @@
   <div id="content" class="content" onclick="removeResponsiveNav()">
     <main>
       <section class="intro">
-        <div style="transition-delay: 100ms;" class="fadeup-enter-done">
+        <div>
           <h1>Hi, my name is</h1>
         </div>
 
-        <div style="transition-delay: 200ms;" class="fadeup-enter-done">
-          <h2 class="big-heading">Yassir Sellal.</h2>
+        <div>
+          <h2>Yassir Sellal.</h2>
         </div>
 
-        <div style="transition-delay: 300ms;" class="fadeup-enter-done">
-          <h3 class="big-heading">I build things for the web.</h3>
+        <div>
+          <h3>I build things for the web.</h3>
         </div>
 
-        <div style="transition-delay: 400ms;" class="fadeup-enter-done">
+        <div>
           <p>
             I'm a software engineer who specializes in building exceptional digital experiences. Currently,
             I'm looking for a job in the web development industry.
           </p>
         </div>
 
-        <div style="transition-delay: 500ms;" class="fadeup-enter-done divButton">
+        <div class="divButton">
           <a href="mailto:sellal.yassir@gmail.com" class="email-link">Get In Touch</a>
         </div>
       </section>
@@ -70,15 +70,12 @@
       <section id="about" class="about" data-sr-id="0">
         <h2 class="numbered-heading">About Me</h2>
         <div class="inner">
-          <div class="about__StyledText-sc-1ownso9-1 kNIdQM">
-            <div>
-              <p>Hello! My name is Yassir and I enjoy creating things that live on the internet.
-                My interest in web development started back during high school when I start learning
-                to create static websites using HTML &amp; CSS. Here are a few technologies I've been working with
-                recently:
-              </p>
-            </div>
-
+          <div class="left-side">
+            <p>Hello! My name is Yassir and I enjoy creating things that live on the internet.
+              My interest in web development started back during high school when I start learning
+              to create static websites using HTML &amp; CSS. Here are a few technologies I've been working with
+              recently:
+            </p>
             <div class="skills-container">
               <div class="column1">
                 <ul class="skills-list">
@@ -109,9 +106,9 @@
       </section>
 
       <section id="projects" class="projects">
-        <h2>Checkout My Projects</h2>
+        <h2 class="numbered-heading"> Checkout My Projects</h2>
         <div class="project">
-          <h3>The Blind Jumper</h3>
+          <h3 class="numbered-project">The Blind Jumper</h3>
           <div class="project-image">
             <a href="https://sim4edu.com/sims/28/" target="_blank">
               <img src="./src/images/projects/blind-jumper.jpg" alt="The Blind Jumper Project"/>
@@ -134,7 +131,7 @@
         </div>
 
         <div class="project">
-          <h3>GET MOVIE</h3>
+          <h3 class="numbered-project">GET MOVIE</h3>
           <div class="project-image">
             <a href="https://github.com/Yassir10/gtmv" target="_blank">
               <img src="./src/images/projects/gtmv.jpg" alt="GTMV Project"/>
@@ -153,71 +150,68 @@
             </div>
           </div>
         </div>
-      </section>
 
+        <section class="tic-tac-toe project">
+          <h3>Take a break and play Tic Tac Toe</h3>
 
-      <section class="tic-tac-toe">
-        <h1>TAKE A BREAK</h1>
-        <h2>Play Tic Tac Toe</h2>
+          <div class="number-of-players">
+            <label>
+              Select the number of players
+              <select id="select-players">
+                <option value="1">1 PLAYER</option>
+                <option value="2">2 PLAYERS</option>
+              </select>
+            </label>
+          </div>
 
-        <div class="number-of-players">
-          <label>
-            Select the number of players
-            <select id="select-players">
-              <option value="1">1 PLAYER</option>
-              <option value="2">2 PLAYERS</option>
-            </select>
-          </label>
-        </div>
+          <div id="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+          </div>
 
-        <div id="board">
-          <div class="cell" data-cell></div>
-          <div class="cell" data-cell></div>
-          <div class="cell" data-cell></div>
-          <div class="cell" data-cell></div>
-          <div class="cell" data-cell></div>
-          <div class="cell" data-cell></div>
-          <div class="cell" data-cell></div>
-          <div class="cell" data-cell></div>
-          <div class="cell" data-cell></div>
-        </div>
+          <div class="game-footer">
+            <div id="winningMessage" class="winning-message hide" data-winning-message-text></div>
+            <button id="restart-button">Restart</button>
+          </div>
+        </section>
 
-        <div class="game-footer">
-          <div id="winningMessage" class="winning-message hide" data-winning-message-text></div>
-          <button id="restart-button">Restart</button>
-        </div>
-      </section>
-
-      <section class="project">
-        <h3>TODO LIST</h3>
-        <div class="project-image">
-          <a href="https://github.com/Yassir10/tdmngr" target="_blank">
-            <img src="./src/images/projects/todo.jpg" alt="TO DO UI"/>
-          </a>
-        </div>
-        <div class="project-description">
-          <p>
-            It's true that there are a lot of todo list web and mobile apps and one does not need to reinvent
-            the wheel by making another todo list app. The goal of developing this app was at the beginning
-            to learn React and simply have fun. However, I started to use it everyday to manage my todo list and
-            it turned out that it was very helpful in my everyday life. Using this app I can add a new task,
-            check the completed task and delete the not anymore relevant apps. Furthermore, I can also select
-            the completed, the uncompleted, or simply all the tasks. The tasks are stored in local storage in
-            the browser.
-          </p>
-          <div class="github-link">
+        <section class="project">
+          <h3  class="numbered-project">TODO LIST</h3>
+          <div class="project-image">
             <a href="https://github.com/Yassir10/tdmngr" target="_blank">
-              <i class="fab fa-github"></i>
+              <img src="./src/images/projects/todo.jpg" alt="TO DO UI"/>
             </a>
           </div>
-        </div>
+          <div class="project-description">
+            <p>
+              It's true that there are a lot of todo list web and mobile apps and one does not need to reinvent
+              the wheel by making another todo list app. The goal of developing this app was at the beginning
+              to learn React and simply have fun. However, I started to use it everyday to manage my todo list and
+              it turned out that it was very helpful in my everyday life. Using this app I can add a new task,
+              check the completed task and delete the not anymore relevant apps. Furthermore, I can also select
+              the completed, the uncompleted, or simply all the tasks. The tasks are stored in local storage in
+              the browser.
+            </p>
+            <div class="github-link">
+              <a href="https://github.com/Yassir10/tdmngr" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </section>
       </section>
 
 
       <section id="contact">
-
-        <h2 class="overline">What’s Next?</h2>
-        <h2 class="title">Get In Touch</h2>
+        <h1 class="overline">What’s Next?</h1>
+        <h2>Get In Touch</h2>
 
         <p>
           I currently just got my Master's degree in computer science and looking for a new job in the web
