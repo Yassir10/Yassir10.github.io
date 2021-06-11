@@ -11,6 +11,9 @@
 
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    /*background-color: var(--white);*/
+    /*filter: invert(1);*/
 }
 
 *, *:before, *:after {
@@ -233,15 +236,10 @@ section {
     width: 90%;
     max-width: 90% !important;
 }
-.about .left-side p{
-    margin-bottom: 20px;
-}
-.about .left-side {
-    width: 90% !important;
-}
+
 
 .project {
-    padding: 5% !important;
+    padding: 2% !important;
 }
 
 #contact p {
@@ -685,6 +683,14 @@ a.menu-icon {
     #nav .logo img {
         height: 60px;
         width: 60px;
+    }
+
+    .about .left-side p, .about .left-side ul{
+        margin-bottom: 40px;
+    }
+
+    .about .left-side {
+        width: 90% !important;
     }
 
     header {
