@@ -4,8 +4,15 @@
 <head>
   <title>Yassir Sellal</title>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  <!--  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>-->
   <link rel="stylesheet" href="src/css/main.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--  <link rel="icon"-->
+  <!--        type="image/png"-->
+  <!--        href="./src/images/logo.png">-->
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://favicon.ico">
+
 </head>
 
 
@@ -18,7 +25,7 @@
     <nav id="nav" class="nav">
       <div class="logo">
         <a href="#">
-          <img src="src/images/logo.png"/>
+          <img src="src/images/logo.png" alt="logo">
         </a>
         <a href="javascript:void(0);" class="menu-icon" onclick="setResponsiveNav()">
           <i class="fa fa-bars"></i>
@@ -27,7 +34,7 @@
       <div id="nav-links-container" class="nav-links-container">
         <ol>
           <li><a href="#about" onclick="manageNav()">About</a></li>
-          <li><a href="#experience" onclick="manageNav()">Experience</a></li>
+          <!--          <li><a href="#experience" onclick="manageNav()">Experience</a></li>-->
           <li><a href="#projects" onclick="manageNav()">Projects</a></li>
           <li><a href="#contact" onclick="manageNav()">Contact</a></li>
         </ol>
@@ -42,92 +49,104 @@
 
   <div id="content" class="content" onclick="removeResponsiveNav()">
     <main>
-      <section class="intro">
-        <div>
-          <h1>Hi, my name is</h1>
-        </div>
 
-        <div>
-          <h2>Yassir Sellal.</h2>
-        </div>
-
-        <div>
-          <h3>I build things for the web.</h3>
-        </div>
-
-        <div>
-          <p>
-            I'm a software engineer who specializes in building exceptional digital experiences. Currently,
-            I'm looking for a job in the web development industry.
-          </p>
-        </div>
-
-        <div class="divButton">
-          <a href="mailto:sellal.yassir@gmail.com" class="email-link">Get In Touch</a>
-        </div>
-      </section>
-
-      <section id="about" class="about" data-sr-id="0">
+      <section id="about" class="about">
         <h2 class="numbered-heading">About Me</h2>
-        <div class="inner">
-          <div class="left-side">
-            <p>Hello! My name is Yassir and I enjoy creating things that live on the internet.
-              My interest in web development started back during high school when I start learning
-              to create static websites using HTML &amp; CSS. Here are a few technologies I've been working with
-              recently:
-            </p>
-            <div class="skills-container">
-              <div class="column1">
-                <ul class="skills-list">
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>JavaScript (ES6+)</li>
-                  <li>React</li>
-                </ul>
-              </div>
-              <div class="column2">
-                <ul class="skills-list">
-                  <li>Node.js</li>
-                  <li>PHP</li>
-                  <li>Java</li>
-                  <li>SQL</li>
-                </ul>
-              </div>
+        <div class="inner" data-sr-id="0">
+          <div class="intro">
+            <div>
+              <h1>Hi, my name is</h1>
+            </div>
+
+            <div>
+              <h2>Yassir Sellal.</h2>
+            </div>
+
+            <div>
+              <h3>I build things for the web.</h3>
             </div>
           </div>
 
-          <div class="image-container">
-            <img alt="My photo" class="image" src="src/images/photo.JPG" height='300px' width='250px'/>
-            <div class="overlay">
-              <span>Hello!</span>
+          <div class="about-content">
+            <div class="left-side">
+              <p>
+                My interest in web development started back during high school when I start learning to
+                create static websites. Since then, I have been enjoying creating things that live on the
+                internet. I describe myself as someone who's persistent, a quick learner.
+              </p>
+              <p>
+                Here are a few technologies I've been working with recently:
+              </p>
+              <div class="skills-container">
+                <div class="column1">
+                  <ul class="skills-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React</li>
+                  </ul>
+                </div>
+                <div class="column2">
+                  <ul class="skills-list">
+                    <li>Node.js</li>
+                    <li>PHP</li>
+                    <li>Java</li>
+                    <li>SQL</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="right-side">
+              <div class="image-container">
+                <img alt="My photo" class="image" src="src/images/photo.jpg"/>
+                <div class="overlay">
+                  <span>Hello!</span>
+                </div>
+              </div>
+              <div class="social-media">
+                <div class="social-links">
+                  <a href="https://github.com/Yassir10">
+                    <i class="fa fa-github"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/yassir-sellal-a98aba187/">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="divButton">
+                <a href="mailto:sellal.yassir@gmail.com" class="email-link">Get In Touch</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <div id="projects" class="projects">
-        <h2 class="numbered-heading"> Checkout My Projects</h2>
+      <section id="projects" class="projects">
+        <h2 class="numbered-heading"> My Projects</h2>
         <div class="project">
           <h3 class="numbered-project">The Blind Jumper</h3>
           <div class="project-info">
-          <div class="project-image">
-            <a href="https://sim4edu.com/sims/28/" target="_blank">
-              <img src="./src/images/projects/blind-jumper.jpg" alt="The Blind Jumper Project"/>
-            </a>
-          </div>
-          <div class="project-description">
-            <p>In this scenario, there is an agent (the "jumper") that is not able to see the size of the barrier over
-              which he has to jump, and there is another agent (the "speaker") that is able to see the size of the
-              barrier and tries to communicate the right jump length to the jumper. However, the jumper and the speaker
-              do not speak the same language, so both agents first have to learn which signal communicates which jump
-              length. Both agents can perceive the success or failure of a jump (a jump fails if it is too short or too
-              long), and then update their signalling, resp. signal interpretation, function, accordingly.</p>
-            <div class="github-link">
-              <a href="https://github.com/Yassir10/blind-jumper" target="_blank">
-                <i class="fab fa-github"></i>
+            <div class="project-image">
+              <a href="https://sim4edu.com/sims/28/" target="_blank">
+                <img src="./src/images/projects/blind-jumper.jpg" alt="The Blind Jumper Project"/>
               </a>
-
             </div>
+            <div class="project-description">
+              <p>In this scenario, there is an agent (the "jumper") that is not able to see the size of the barrier over
+                which he has to jump, and there is another agent (the "speaker") that is able to see the size of the
+                barrier and tries to communicate the right jump length to the jumper. However, the jumper and the
+                speaker
+                do not speak the same language, so both agents first have to learn which signal communicates which jump
+                length. Both agents can perceive the success or failure of a jump (a jump fails if it is too short or
+                too
+                long), and then update their signalling, resp. signal interpretation, function, accordingly.</p>
+              <div class="github-link">
+                <a href="https://github.com/Yassir10/blind-jumper" target="_blank">
+                  <i class="fa fa-github"></i>
+                </a>
+
+              </div>
             </div>
           </div>
         </div>
@@ -147,7 +166,7 @@
                 community dating back to 2008.</p>
               <div class="github-link">
                 <a href="https://github.com/Yassir10/gtmv" target="_blank">
-                  <i class="fab fa-github"></i>
+                  <i class="fa fa-github"></i>
                 </a>
 
               </div>
@@ -206,37 +225,37 @@
               </p>
               <div class="github-link">
                 <a href="https://github.com/Yassir10/tdmngr" target="_blank">
-                  <i class="fab fa-github"></i>
+                  <i class="fa fa-github"></i>
                 </a>
               </div>
             </div>
           </div>
         </div>
-        </section>
+      </section>
 
 
-        <section id="contact">
-          <h1 class="overline">What’s Next?</h1>
-          <h2>Get In Touch</h2>
+      <section id="contact">
+        <h1 class="overline">What’s Next?</h1>
+        <h2>Get In Touch</h2>
 
-          <p>
-            I currently just got my Master's degree in computer science and looking for a new job in the web
-            development industry. Whether you have a job offer or just want to say hi, I'll be happy to get
-            back to you!
-          </p>
+        <p>
+          I currently just got my Master's degree in computer science and looking for a new job as a web
+          developer. Whether you have a job offer or just want to say hi, I'll be happy to get
+          back to you!
+        </p>
 
-          <a class="email-link" href="mailto:sellal.yassir@gmail.com"
-             rel="noopener noreferrer" target="_blank">Contact me
+        <a class="email-link" href="mailto:sellal.yassir@gmail.com"
+           rel="noopener noreferrer" target="_blank">Contact me
+        </a>
+        <div class="social-media">
+          <a href="https://www.linkedin.com/in/yassir-sellal-a98aba187/" target="blank">
+            <i class="fa fa-linkedin"></i>
           </a>
-          <div class="social-media">
-            <a href="https://www.linkedin.com/in/yassir-sellal-a98aba187/" target="blank">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/yassir10" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </section>
+          <a href="https://github.com/yassir10" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+        </div>
+      </section>
 
     </main>
 

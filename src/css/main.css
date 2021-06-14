@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");
-@import url("fontawesome-all.min.css");
+/*@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");*/
+/*@import url("fontawesome-all.min.css");*/
 
 /* Basic */
 
@@ -210,6 +210,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin-bottom: 10px;
 }
 
 /* Main */
@@ -296,6 +297,10 @@ section {
     width: 50%;
 }
 
+.about {
+    padding-top: 120px;
+}
+
 .about .numbered-heading {
     display: flex;
     align-items: center;
@@ -334,6 +339,7 @@ section {
 
 .about .inner {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
 }
 
@@ -341,7 +347,10 @@ section {
     width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+}
+.about .left-side p {
+    margin-bottom: 20px;
 }
 
 .skills-container {
@@ -368,21 +377,32 @@ section {
     font-size: var(--fz-md);
 }
 
+.about-content {
+    display: flex;
+}
 
 /*Image*/
 
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%
+}
+
 .image-container {
-    height: 333px;
+    height: 300px;
     width: 250px;
-    opacity: 0.7;
+    /*opacity: 0.9;*/
 }
 
 .image {
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--blue);
-    border-radius: 20px;
-    height: 90%;
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 100%;
     width: 100%;
 }
 
@@ -392,11 +412,6 @@ section {
     opacity: 0;
     transition: .5s ease;
     text-align: center;
-}
-
-.image-container:hover {
-    /*opacity: 0.7;*/
-    /*transition: 1s;*/
 }
 
 .image-container:hover .overlay {
@@ -437,6 +452,34 @@ section {
     margin-bottom: 30px;
 }
 
+.social-media {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto 0 auto;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+}
+
+.social-media i, .github-link i {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.social-links>a:first-child, .social-media>a:first-child {
+    margin-right: 10px;
+}
 /*Tic Tac Toe*/
 
 .tic-tac-toe {
@@ -636,7 +679,7 @@ section {
 
 .project .project-image img {
     width: 100%;
-    opacity: 0.9;
+    /*opacity: 0.9;*/
     border-radius: 10px;
 
 }
@@ -666,13 +709,12 @@ a.menu-icon {
 
 .social-media {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 50px;
 }
 
 
-/* Resposive */
+/* Responsive */
 
 @media only screen and (max-width: 1000px) {
 
@@ -712,7 +754,7 @@ a.menu-icon {
         padding: 50px 50px;
     }
 
-    .about .inner {
+    .about-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
