@@ -5,13 +5,28 @@ const WINNING_COMBINATIONS = [
     [0, 3, 6], [1, 4, 7], [2, 5, 8],
     [0, 4, 8], [2, 4, 6]
 ]
-const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
-const cellElements = document.querySelectorAll('[data-cell]');
-const board = document.getElementById('board')
-const restartButton = document.getElementById("restart-button")
+const winningMessageTextElement = document.querySelector('[data-winning-message-text]'),
+    cellElements = document.querySelectorAll('[data-cell]'),
+    board = document.getElementById('board'),
+    restartButton = document.getElementById("restart-button");
 
+let isDifficult = false;
 
-let circleTurn
+const setDifficulty = (level) => {
+    if(level === "hard"){
+        document.getElementById('easy').style.backgroundColor = "var(--blue)";
+        document.getElementById('hard').style.backgroundColor = "var(--blue)";
+        isDifficult = true
+    } else {
+        document.getElementById('easy').style.backgroundColor = "var(--blue)";
+        document.getElementById('hard').style.backgroundColor = "white";
+        isDifficult = false;
+    }
+    console.log(isDifficult)
+
+}
+
+let boardArr = ["", "", "", "", "", "", "", "", ""], circleTurn
 
 
 const selectPlayersNumber = document.getElementById("select-players");
@@ -24,13 +39,14 @@ selectPlayersNumber.addEventListener('change', () => {
 const checkWin = (currentClass) => {
     return WINNING_COMBINATIONS.some(combination => {
         return combination.every(index => {
-            return cellElements[index].classList.contains(currentClass);
+            return boardArr[index] === currentClass;
         });
     })
 }
 
 const handleClick = (e) => {
     const cell = e.target
+    boardArr[e.target.id] = "x";
 
     if (playersNumber === "2") {
         const currentClass = circleTurn ? O_CLASS : X_CLASS
@@ -66,9 +82,10 @@ const handleClick = (e) => {
 
 
 const isDraw = () => {
-    return [...cellElements].every(cell => (
-        cell.classList.contains(X_CLASS) || cell.classList.contains(O_CLASS)
+    return [...boardArr].every(cell => (
+        cell === "x" || cell === "o"
     ));
+
 }
 
 
@@ -76,7 +93,7 @@ const endGame = (draw) => {
     if (draw) {
         winningMessageTextElement.innerText = "Draw"
     } else {
-        winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} won`
+        winningMessageTextElement.innerText = `${circleTurn ? "I" : "You"} won`
     }
     winningMessageTextElement.classList.remove("hide")
 
@@ -109,12 +126,16 @@ const automaticPlay = () => {
     const currentClass = O_CLASS
     let rand
 
-    do {
-        rand = Math.floor(Math.random() * 9);
-    } while(cellElements[rand].classList.contains(X_CLASS) || cellElements[rand].classList.contains(O_CLASS))
+    if (!isDifficult) {
+        do {
+            rand = Math.floor(Math.random() * 9);
+        } while (cellElements[rand].classList.contains(X_CLASS) || cellElements[rand].classList.contains(O_CLASS))
 
-    if(rand !== undefined){
-        placeMark(cellElements[rand], O_CLASS);
+        if (rand !== undefined) {
+            placeMark(cellElements[rand], O_CLASS);
+        }
+    } else {
+        bestMove();
     }
 
     if (checkWin(currentClass)) {
@@ -130,11 +151,13 @@ const automaticPlay = () => {
 const startGame = () => {
     circleTurn = false
 
-    cellElements.forEach(cell => {
+    for (let i = 0; i < boardArr.length; i++) {
+        let cell = cellElements[i];
+        boardArr[i] = "";
         cell.classList.remove(X_CLASS)
         cell.classList.remove(O_CLASS)
         cell.addEventListener('click', handleClick, {once: true})
-    })
+    }
     setBoardHoverClass();
     winningMessageTextElement.classList.add("hide")
 }
@@ -143,4 +166,64 @@ restartButton.addEventListener('click', startGame)
 
 
 startGame()
+
+const bestMove = () => {
+    let bestScore = -Infinity, move;
+    for (let i = 0; i < 9; i++) {
+        if (boardArr[i] === '') {
+            boardArr[i] = 'o'
+            let score = minimax(boardArr, 0, false);
+            boardArr[i] = ''
+            if (score > bestScore) {
+                bestScore = score;
+                move = i;
+            }
+        }
+    }
+    boardArr[move] = 'o'
+    placeMark(cellElements[move], O_CLASS);
+}
+
+let scores = {
+    X: -1,
+    O: 1,
+    tie: 0
+};
+
+function minimax(boardArr, depth, isMaximizing) {
+    if (checkWin(X_CLASS)) {
+        return scores["X"];
+    }
+    if (checkWin(O_CLASS)) {
+        return scores["O"];
+    }
+    if (isDraw()) {
+        return scores["tie"];
+    }
+
+    if (isMaximizing) {
+        let bestScore = -Infinity;
+        for (let i = 0; i < 9; i++) {
+            if (boardArr[i] === '') {
+                boardArr[i] = 'o'
+                let score = minimax(boardArr, depth + 1, false);
+                boardArr[i] = ''
+                bestScore = Math.max(score, bestScore);
+            }
+        }
+        return bestScore;
+    } else {
+        let bestScore = Infinity;
+        for (let i = 0; i < 9; i++) {
+            // Is the spot available?
+            if (boardArr[i] === '') {
+                boardArr[i] = 'x'
+                let score = minimax(boardArr, depth + 1, true);
+                boardArr[i] = ''
+                bestScore = Math.min(score, bestScore);
+            }
+        }
+        return bestScore;
+    }
+}
 
