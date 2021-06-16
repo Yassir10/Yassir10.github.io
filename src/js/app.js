@@ -21,6 +21,10 @@ const manageNavHiding = () => {
         }
 
         prevScroll = curScroll;
+
+        if(curScroll > 5000){
+            dropMike()
+        }
     };
 
     let toggleHeader = function (direction, curScroll) {
@@ -96,17 +100,16 @@ const nameText = name.innerText;
 const splitText = nameText.split("")
 
 name.innerText = "";
-for(let i=0;i<nameText.length;i++){
+for (let i = 0; i < nameText.length; i++) {
     name.innerHTML += `<span>${nameText[i]}</span>`
 }
-
 
 
 const onTick = () => {
     const span = name.querySelectorAll("span")[char]
     span.classList.add("fade");
     char++;
-    if(char === splitText.length){
+    if (char === splitText.length) {
         complete()
         return;
     }
@@ -119,3 +122,18 @@ const complete = () => {
 
 let char = 0
 let timer = setInterval(onTick, 100);
+
+
+const dropMike = () => {
+    const mic = document.querySelectorAll(".mic");
+    mic.forEach(elm => {
+        // let newone = elm.cloneNode(true);
+        // elm.parentNode.replaceChild(newone, elm);
+
+        elm.classList.remove("animate-mic")
+
+        setTimeout(()=> {
+            elm.classList.add("animate-mic")
+        }, 50)
+    })
+}
