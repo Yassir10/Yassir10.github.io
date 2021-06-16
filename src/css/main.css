@@ -206,8 +206,8 @@ header {
 }
 
 #nav .logo img {
-    width: 70px;
-    height: 70px;
+    /*width: 70px;*/
+    /*height: 70px;*/
     cursor: pointer;
     transition: width;
 }
@@ -315,7 +315,7 @@ section {
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    min-height: 80vh;
+    /*min-height: 80vh;*/
     max-width: 1000px;
 }
 
@@ -752,7 +752,7 @@ section {
 #board.o .cell:not(.x):not(.o):hover::after {
     width: calc(var(--mark-size) * .83);
     height: calc(var(--mark-size) * .83);
-    background-color: #382977;
+    background-color: var(--tictactoe-bg);
 }
 
 
@@ -916,13 +916,14 @@ a.menu-icon {
 
 @media only screen and (max-width: 1000px) {
 
-    main {
-        padding: 0 5% 0 5%;
+
+    #coding-animation {
+        padding-top: 200px;
     }
 
-    #nav .logo img {
-        height: 60px;
-        width: 60px;
+
+    main {
+        padding: 0 5% 0 5%;
     }
 
     .about .left-side p, .about .left-side ul {
@@ -934,7 +935,7 @@ a.menu-icon {
     }
 
     header {
-        padding: 5px 20px;
+        padding: 10px 20px;
         box-shadow: 0 10px 30px -10px var(--header-bg);
     }
 
@@ -1025,6 +1026,12 @@ a.menu-icon {
         padding: 10px;
     }
 
+    .logo .menu-icon i {
+        height: 50px;
+        width: 50px;
+    }
+
+
     .logo .menu-icon {
         display: block;
     }
@@ -1034,6 +1041,22 @@ a.menu-icon {
         flex-direction: column;
         align-items: flex-start;
     }
+
+    #day {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact h1, .contact h2 {
+        width: 100% !important;
+    }
+
+    .numbered-heading:before {
+        font-size: 16px;
+    }
+
+    
+
 }
 
 
@@ -1042,7 +1065,7 @@ a.menu-icon {
 :root {
     --cell-size: 100px;
     --mark-size: calc(var(--cell-size) * 0.9);
-
+    --tictactoe-bg: #001560;
 
     --header-bg: rgb(0, 17, 77);
     --blue: #43bff0;
