@@ -140,8 +140,13 @@ const dropMike = () => {
 
 
 window.onload = function() {
-    window.setTimeout(
-        function() { window.scrollTo(0,0); },
-        10
-    );
+    window.setTimeout(() => {
+            window.scrollTo(0,0);
+            },
+        10);
+
+    setTimeout(()=> {
+        const divStars = document.getElementById("stars");
+        divStars.classList.add("stars")
+    }, 3000)
 };
