@@ -16,6 +16,11 @@ const manageNavHiding = () => {
             direction = 1; //down
         }
 
+        // const divStars = document.querySelector(".stars");
+        // if(curScroll !== prevScroll){
+        //     divStars.style.top = curScroll+"px"
+        // }
+
         if (direction !== prevDirection) {
             toggleHeader(direction, curScroll);
         }
@@ -58,7 +63,6 @@ const manageNav = () => {
 
 
 const setResponsiveNav = () => {
-    console.log("hello")
     const navLinksContainer = document.getElementById("nav-links-container"),
         animation = document.getElementById("coding-animation"),
         nav = document.getElementById("nav"),
@@ -140,13 +144,15 @@ const dropMike = () => {
 
 
 window.onload = function() {
-    window.setTimeout(() => {
-            window.scrollTo(0,0);
-            },
-        10);
+    // window.setTimeout(() => {
+    //         window.scrollTo(0,0);
+    //         },
+    //     10);
 
     setTimeout(()=> {
-        const divStars = document.getElementById("stars");
-        divStars.classList.add("stars")
+        // const divStars = document.getElementById("stars");
+        // divStars.classList.add("stars")
+        // console.log(document.querySelector("html"))
+        // divStars.style.height = ""
     }, 3000)
 };

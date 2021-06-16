@@ -10,7 +10,7 @@
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 630%;
+    height: 100%;
     display: block;
     position: absolute;
     z-index: -1;
@@ -145,7 +145,6 @@ header {
     /*background: rgb(0,21,96);*/
     /*background: radial-gradient(circle, rgba(0,21,96,1) 0%, rgba(9,9,121,1) 35%);*/
     background-color: var(--header-bg);
-
 }
 
 /*********** Nav ***********/
@@ -193,7 +192,6 @@ header {
         transform: rotate(-360deg);
         left: 0;
     }
-
 }
 
 
@@ -251,10 +249,16 @@ header {
     border: 1px solid var(--header-bg) !important;
 }
 
-
-.nav-links-container ol li a {
-    padding: 10px;
+.nav-links-container ol li {
+    /*height: 100px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/*.nav-links-container ol li a {*/
+/*    height: 100%;*/
+/*}*/
 
 .nav-links-container ol li a::before {
     counter-increment: nav;
@@ -475,7 +479,7 @@ section {
     margin-bottom: 10px;
     padding-left: 20px;
     font-family: var(--font-mono);
-    font-size: var(--fz-md);
+    /*font-size: var(--fz-md);*/
 }
 
 .about-content {
@@ -577,8 +581,9 @@ section {
 }
 
 .overline, #contact h2, #contact p, #contact .email-link {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
+
 
 .social-media {
     max-width: 1000px;
@@ -1047,16 +1052,15 @@ a.menu-icon {
         text-align: center;
     }
 
-    .contact h1, .contact h2 {
-        width: 100% !important;
-    }
-
     .numbered-heading:before {
         font-size: 16px;
     }
 
-    
-
+    .overline, #contact h2, #contact p, #contact {
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 

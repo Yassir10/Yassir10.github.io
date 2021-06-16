@@ -5,6 +5,7 @@ const WINNING_COMBINATIONS = [
     [0, 3, 6], [1, 4, 7], [2, 5, 8],
     [0, 4, 8], [2, 4, 6]
 ]
+
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]'),
     cellElements = document.querySelectorAll('[data-cell]'),
     board = document.getElementById('board'),
@@ -22,8 +23,6 @@ const setDifficulty = (level) => {
         document.getElementById('hard').style.backgroundColor = "white";
         isDifficult = false;
     }
-    console.log(isDifficult)
-
 }
 
 let boardArr = ["", "", "", "", "", "", "", "", ""], circleTurn
@@ -36,6 +35,8 @@ selectPlayersNumber.addEventListener('change', () => {
     playersNumber = selectPlayersNumber.options[selectPlayersNumber.selectedIndex].value;
 })
 
+
+
 const checkWin = (currentClass) => {
     return WINNING_COMBINATIONS.some(combination => {
         return combination.every(index => {
@@ -46,11 +47,11 @@ const checkWin = (currentClass) => {
 
 const handleClick = (e) => {
     const cell = e.target
-    boardArr[e.target.id] = "x";
 
     if (playersNumber === "2") {
         const currentClass = circleTurn ? O_CLASS : X_CLASS
         placeMark(cell, currentClass);
+        boardArr[e.target.id] = currentClass;
 
         if (checkWin(currentClass)) {
             endGame(false);
@@ -66,6 +67,7 @@ const handleClick = (e) => {
         if (!circleTurn) {
             currentClass = X_CLASS
             placeMark(cell, X_CLASS)
+            boardArr[e.target.id] = currentClass;
         }
 
         if (checkWin(currentClass)) {
@@ -105,7 +107,6 @@ const placeMark = (cell, currentClass) => {
 
 const swapTurns = function () {
     circleTurn = !circleTurn
-
     if (playersNumber === "1" && circleTurn) {
         automaticPlay()
     }
