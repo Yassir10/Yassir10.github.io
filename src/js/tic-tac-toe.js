@@ -14,7 +14,7 @@ const winningMessageTextElement = document.querySelector('[data-winning-message-
 let isDifficult = false;
 
 const setDifficulty = (level) => {
-    if(level === "hard"){
+    if (level === "hard") {
         document.getElementById('easy').style.backgroundColor = "var(--blue)";
         document.getElementById('hard').style.backgroundColor = "var(--blue)";
         isDifficult = true
@@ -36,7 +36,6 @@ selectPlayersNumber.addEventListener('change', () => {
 })
 
 
-
 const checkWin = (currentClass) => {
     return WINNING_COMBINATIONS.some(combination => {
         return combination.every(index => {
@@ -47,6 +46,9 @@ const checkWin = (currentClass) => {
 
 const handleClick = (e) => {
     const cell = e.target
+
+    const select = document.getElementById("select-players")
+    select.setAttribute("disabled", "disabled");
 
     if (playersNumber === "2") {
         const currentClass = circleTurn ? O_CLASS : X_CLASS
@@ -95,7 +97,11 @@ const endGame = (draw) => {
     if (draw) {
         winningMessageTextElement.innerText = "Draw"
     } else {
-        winningMessageTextElement.innerText = `${circleTurn ? "I" : "You"} won`
+        if (playersNumber === "1") {
+            winningMessageTextElement.innerText = `${circleTurn ? "I" : "You"} won`
+        } else {
+            winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} won`
+        }
     }
     winningMessageTextElement.classList.remove("hide")
 
@@ -151,6 +157,9 @@ const automaticPlay = () => {
 
 const startGame = () => {
     circleTurn = false
+
+    const select = document.getElementById("select-players")
+    select.removeAttribute("disabled");
 
     for (let i = 0; i < boardArr.length; i++) {
         let cell = cellElements[i];
