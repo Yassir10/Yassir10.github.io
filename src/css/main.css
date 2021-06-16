@@ -967,7 +967,7 @@ a.menu-icon {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        background-color: #3C2A7A;
+        background-color: var(--header-bg);
         position: relative;
         width: 100%;
         padding: 10px;
