@@ -274,10 +274,16 @@ header {
 
 /*Animation*/
 
-.animation {
+#coding-animation {
     padding: 100px 0 0 0;
     margin: 0 auto;
     animation: coding 2s ease;
+    width: 200px;
+    opacity: 1;
+}
+
+.content.responsive #coding-animation {
+    opacity: 0;
 }
 
 @keyframes coding {

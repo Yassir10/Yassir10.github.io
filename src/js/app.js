@@ -58,15 +58,19 @@ const manageNav = () => {
 
 
 const setResponsiveNav = () => {
-    const navLinksContainer = document.getElementById("nav-links-container");
-    const nav = document.getElementById("nav");
-    const content = document.getElementById("content")
+    console.log("hello")
+    const navLinksContainer = document.getElementById("nav-links-container"),
+        animation = document.getElementById("coding-animation"),
+        nav = document.getElementById("nav"),
+        content = document.getElementById("content")
 
+    // console.log("+"+navLinksContainer.className+"+");
     if (navLinksContainer.className === "nav-links-container") {
         navLinksContainer.className += " responsive";
     } else {
         navLinksContainer.className = "nav-links-container";
     }
+    // console.log("+"+navLinksContainer.className+"+");
 
     if (nav.className === "nav") {
         nav.className += " responsive";
@@ -79,15 +83,11 @@ const setResponsiveNav = () => {
     } else {
         content.className = "content"
     }
-
 }
 
 const removeResponsiveNav = () => {
     const navLinksContainer = document.getElementById("nav-links-container");
     navLinksContainer.className = "nav-links-container";
-
-    const content = document.getElementById("content")
-
 
     removeBlur();
 }
