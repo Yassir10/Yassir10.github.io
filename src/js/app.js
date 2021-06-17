@@ -98,9 +98,6 @@ const removeResponsiveNav = () => {
     const content = document.getElementById("content")
     content.className = "content";
 
-
-    console.log("Salam")
-
     removeBlur();
 }
 
@@ -158,9 +155,7 @@ window.onload = function() {
     //     10);
 
     setTimeout(()=> {
-        // const divStars = document.getElementById("stars");
-        // divStars.classList.add("stars")
-        // console.log(document.querySelector("html"))
-        // divStars.style.height = ""
+        const divStars = document.getElementById("global-container");
+        divStars.classList.add("stars")
     }, 3000)
 };
