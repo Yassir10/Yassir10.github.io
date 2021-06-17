@@ -652,9 +652,12 @@ section {
     margin-right: 20px;
 }
 
+.difficulty button {
+    margin-right: 20px;
+}
+
 .diffButtons {
     height: 100%;
-    width: 50px;
     display: flex;
     justify-content: space-around;
 }
@@ -780,7 +783,7 @@ section {
 }
 
 .game-footer #restart-button {
-    height: 40px;
+    /*height: 40px;*/
     font-size: var(--fz-lg);
     font-weight: bold;
     border-radius: 5px;
@@ -925,25 +928,10 @@ a.menu-icon {
 
 @media only screen and (max-width: 1000px) {
 
-    #coding-animation {
-        padding-top: 200px;
-    }
-
-
-    main {
-        padding: 0 5% 0 5%;
-    }
-
-    .about .left-side p, .about .left-side ul {
-        margin-bottom: 40px;
-    }
-
-    .about .left-side {
-        width: 90% !important;
-    }
+    /* Header */
 
     header {
-        padding: 10px 20px;
+        /*padding: 10px 20px;*/
         box-shadow: 0 10px 30px -10px var(--header-bg);
     }
 
@@ -951,31 +939,6 @@ a.menu-icon {
         position: sticky;
         display: flex;
         flex-direction: column;
-    }
-
-    .hide {
-        opacity: 1;
-    }
-
-    .project {
-        padding: 50px 50px;
-    }
-
-    .about-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .about .inner .image-container {
-        margin: 0;
-    }
-
-    .content.responsive {
-        filter: blur(20px);
-        opacity: 0.2;
-        cursor: pointer;
     }
 
     .nav-links-container div, .nav-links-container ol {
@@ -1022,8 +985,72 @@ a.menu-icon {
     }
 
 
-    #nav a:hover {
-        border: none;
+    #nav.responsive {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        /*z-index: 2;*/
+    }
+
+
+    /* Coding Animation*/
+
+    #coding-animation {
+        padding-top: 200px;
+    }
+
+    main {
+        padding: 0 5% 0 5%;
+    }
+
+    .about .left-side p, .about .left-side ul {
+        margin-bottom: 40px;
+    }
+
+    .about .left-side {
+        width: 90% !important;
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about .inner .image-container {
+        margin: 0;
+    }
+
+    #content a, #content button:not(#easy):not(#hard){
+        padding: 20px !important;
+    }
+
+    #easy, #hard{
+        padding: 10px;
+        margin-right: 20px;
+    }
+
+    .difficulty span {
+        margin-right: 20px;
+    }
+
+
+    i {
+        font-size: 50px !important;
+        margin: 10px;
+    }
+
+
+    .project {
+        padding: 50px 50px;
+    }
+
+    .content.responsive {
+        filter: blur(20px);
+        opacity: 0.2;
+        cursor: pointer;
     }
 
     .logo {
@@ -1042,14 +1069,6 @@ a.menu-icon {
 
     .logo .menu-icon {
         display: block;
-    }
-
-    #nav.responsive {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
-        /*z-index: 2;*/
     }
 
     #day {
