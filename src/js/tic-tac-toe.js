@@ -40,6 +40,7 @@ const checkWin = (currentClass) => {
     return WINNING_COMBINATIONS.some(combination => {
         return combination.every(index => {
             return boardArr[index] === currentClass;
+
         });
     })
 }
@@ -54,6 +55,8 @@ const handleClick = (e) => {
         const currentClass = circleTurn ? O_CLASS : X_CLASS
         placeMark(cell, currentClass);
         boardArr[e.target.id] = currentClass;
+
+
 
         if (checkWin(currentClass)) {
             endGame(false);
@@ -84,14 +87,12 @@ const handleClick = (e) => {
     }
 }
 
-
 const isDraw = () => {
     return [...boardArr].every(cell => (
         cell === "x" || cell === "o"
     ));
 
 }
-
 
 const endGame = (draw) => {
     if (draw) {
@@ -104,7 +105,6 @@ const endGame = (draw) => {
         }
     }
     winningMessageTextElement.classList.remove("hide")
-
 }
 
 const placeMark = (cell, currentClass) => {
@@ -157,6 +157,7 @@ const automaticPlay = () => {
 
 const startGame = () => {
     circleTurn = false
+    winningMessageTextElement.innerText = "";
 
     const select = document.getElementById("select-players")
     select.removeAttribute("disabled");

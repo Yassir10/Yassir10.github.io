@@ -57,6 +57,8 @@ const removeBlur = () => {
 const manageNav = () => {
     removeBlur();
 
+    console.log("hey")
+
     const navLinksContainer = document.getElementById("nav-links-container");
     navLinksContainer.className = "nav-links-container"
 }
@@ -64,17 +66,14 @@ const manageNav = () => {
 
 const setResponsiveNav = () => {
     const navLinksContainer = document.getElementById("nav-links-container"),
-        animation = document.getElementById("coding-animation"),
         nav = document.getElementById("nav"),
         content = document.getElementById("content")
 
-    // console.log("+"+navLinksContainer.className+"+");
     if (navLinksContainer.className === "nav-links-container") {
         navLinksContainer.className += " responsive";
     } else {
         navLinksContainer.className = "nav-links-container";
     }
-    // console.log("+"+navLinksContainer.className+"+");
 
     if (nav.className === "nav") {
         nav.className += " responsive";
@@ -92,6 +91,15 @@ const setResponsiveNav = () => {
 const removeResponsiveNav = () => {
     const navLinksContainer = document.getElementById("nav-links-container");
     navLinksContainer.className = "nav-links-container";
+
+    const nav = document.getElementById("nav");
+    nav.className = "nav"
+
+    const content = document.getElementById("content")
+    content.className = "content";
+
+
+    console.log("Salam")
 
     removeBlur();
 }
