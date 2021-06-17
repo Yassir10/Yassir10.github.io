@@ -925,12 +925,6 @@ a.menu-icon {
 
 @media only screen and (max-width: 1000px) {
 
-
-    #content .cell {
-        /*height: var(--cell-size-responsive);*/
-        /*width: var(--cell-size-responsive)*/
-    }
-
     #coding-animation {
         padding-top: 200px;
     }
