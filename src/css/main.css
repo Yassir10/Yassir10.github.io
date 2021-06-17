@@ -9,8 +9,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
-    height: 100%;
+    /*width: 100%;*/
+    /*height: 100%;*/
     display: block;
     position: absolute;
     z-index: -1;
@@ -293,6 +293,14 @@ header {
     opacity: 0;
 }
 
+
+.content.responsive {
+    position: relative;
+    /*z-index: 1;*/
+    /*margin-top: 400px;*/
+    pointer-events: none;
+}
+
 @keyframes coding {
     from {
         transform: rotateY(0);
@@ -499,7 +507,6 @@ section {
 .image-container {
     height: 300px;
     width: 250px;
-    /*opacity: 0.9;*/
 }
 
 
@@ -549,7 +556,6 @@ section {
 }
 
 .image-container:hover .overlay {
-    opacity: 1;
     font-weight: bold;
     color: white;
 }
@@ -634,6 +640,8 @@ section {
 
 .difficulty {
     display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: var(--font-mono);
     padding: 20px;
 }
@@ -647,7 +655,6 @@ section {
     width: 50px;
     display: flex;
     justify-content: space-around;
-    margin: auto;
 }
 
 #easy {
@@ -853,13 +860,8 @@ section {
 
 .project .project-image img {
     width: 100%;
-    /*opacity: 0.9;*/
     border-radius: 10px;
 
-}
-
-.project .project-image img:hover {
-    opacity: 1;
 }
 
 .project .project-description {
@@ -970,7 +972,8 @@ a.menu-icon {
     }
 
     .content.responsive {
-        filter: blur(5px);
+        filter: blur(20px);
+        opacity: 0.2;
         cursor: pointer;
     }
 
@@ -988,6 +991,7 @@ a.menu-icon {
         padding: 10px;
         border: 1px solid var(--blue);
         border-radius: 5px;
+        opacity: 1;
     }
 
     .nav-links-container.responsive ol {
@@ -1010,14 +1014,6 @@ a.menu-icon {
         width: 100%;
     }
 
-    .nav-links-container.responsive ol li:hover {
-        background-color: var(--blue);
-        font-weight: bold;
-        cursor: pointer;
-        color: white;
-        border: 1px solid black;
-        border-radius: 10px;
-    }
 
     #nav a:hover {
         border: none;
@@ -1045,6 +1041,8 @@ a.menu-icon {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        position: relative;
+        /*z-index: 2;*/
     }
 
     #day {
@@ -1060,6 +1058,10 @@ a.menu-icon {
         margin-bottom: 20px;
         width: 100%;
         text-align: center;
+    }
+
+    .difficulty {
+        width: 100%;
     }
 }
 
